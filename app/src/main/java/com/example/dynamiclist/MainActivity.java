@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         editText = findViewById(R.id.editText);
         addButton = findViewById(R.id.addButton);
         removeButton = findViewById(R.id.removeButton);
-        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView = findViewById(R.id.listRecyclerView);
 
         // Set up RecyclerView
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
