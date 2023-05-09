@@ -37,9 +37,9 @@ public class DynamicListRecyclerViewAdapter extends RecyclerView.Adapter<Dynamic
     static class ViewHolder extends RecyclerView.ViewHolder {
         TextView textView;
 
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            textView = itemView.findViewById(R.id.textView);
+        public ViewHolder(@NonNull View view) {
+            super(view);
+            textView = view.findViewById(R.id.textView);
         }
     }
 }
