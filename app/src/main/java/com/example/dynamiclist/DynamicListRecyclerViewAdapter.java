@@ -1,5 +1,6 @@
 package com.example.dynamiclist;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,9 +12,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class DynamicListRecyclerViewAdapter extends RecyclerView.Adapter<DynamicListRecyclerViewAdapter.ViewHolder> {
+    private final Context context;
     private List<String> itemList;
 
-    public DynamicListRecyclerViewAdapter(List<String> itemList) {
+    public DynamicListRecyclerViewAdapter(Context context,List<String> itemList) {
+        this.context = context;
         this.itemList = itemList;
     }
 

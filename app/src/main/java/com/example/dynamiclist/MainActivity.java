@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Set up RecyclerView
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new DynamicListRecyclerViewAdapter(itemList);
+        adapter = new DynamicListRecyclerViewAdapter(MainActivity.this, itemList);
         recyclerView.setAdapter(adapter);
 
         // Set up addButton click listener
