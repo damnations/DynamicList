@@ -19,6 +19,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private List<String> itemList = new ArrayList<>();
+
     private EditText editText;
     public Button addButton;
     private Button removeButton;
