@@ -38,7 +38,7 @@ public class DynamicListRecyclerViewAdapter extends RecyclerView.Adapter<Dynamic
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView textView;
+        private TextView textView;
 
         public ViewHolder(@NonNull View view) {
             super(view);
