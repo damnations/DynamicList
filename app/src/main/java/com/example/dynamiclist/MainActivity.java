@@ -5,12 +5,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,14 +45,23 @@ public class MainActivity extends AppCompatActivity {
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String item = editText.getText().toString().trim();
-                if (!item.isEmpty()) {
-                    if (itemList.contains(item)){
-                        Toast.makeText(MainActivity.this, "Item already in list", Toast.LENGTH_SHORT).show();
+                try {
+                    String item = editText.getText().toString().trim();
+                    if (item.isEmpty()) {
+                        Toast.makeText(MainActivity.this, "Item not yet entered!", Toast.LENGTH_SHORT).show();
                     } else {
-                        itemList.add(item);
-                        adapter.notifyItemInserted(itemList.size() - 1);
+                        if (!item.isEmpty()) {
+                            if (itemList.contains(item)){
+                                Toast.makeText(MainActivity.this, "Item already in list!", Toast.LENGTH_SHORT).show();
+                            } else {
+                                itemList.add(item);
+                                adapter.notifyItemInserted(itemList.size() - 1);
+                            }
+                        }
                     }
+                }
+                catch (Exception exception) {
+                    exception.printStackTrace();
                 }
             }
         });
@@ -59,11 +70,16 @@ public class MainActivity extends AppCompatActivity {
         removeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (itemList.isEmpty()) {
-                    Toast.makeText(MainActivity.this, "List is empty", Toast.LENGTH_SHORT).show();
-                } else {
-                    itemList.remove(itemList.size() - 1);
-                    adapter.notifyItemRemoved(itemList.size());
+                try {
+                    if (itemList.isEmpty()) {
+                        Toast.makeText(MainActivity.this, "List is empty!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        itemList.remove(itemList.size() - 1);
+                        adapter.notifyItemRemoved(itemList.size());
+                    }
+                }
+                catch (Exception exception) {
+                    exception.printStackTrace();
                 }
             }
         });
