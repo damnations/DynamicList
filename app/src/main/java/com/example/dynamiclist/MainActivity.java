@@ -50,7 +50,8 @@ public class MainActivity extends AppCompatActivity {
                     String item = editText.getText().toString().trim();
                     if (item.isEmpty()) {
                         Toast.makeText(MainActivity.this, "Item not yet entered!", Toast.LENGTH_SHORT).show();
-                    } else {
+                    }
+                    else {
                         if (!item.isEmpty()) {
                             if (itemList.contains(item)){
                                 Toast.makeText(MainActivity.this, "Item already in list!", Toast.LENGTH_SHORT).show();
